@@ -1,7 +1,8 @@
 import express from 'express'
 import asyncHandler from 'express-async-handler'
-const router = express.Router()
 import Product from './productModel.js'
+
+const router = express.Router()
 
 // @desc    Fetch all products
 // @route   GET /api/products
@@ -9,9 +10,9 @@ import Product from './productModel.js'
 router.get(
   '/',
   asyncHandler(async (req, res) => {
-    const products = await Product.find({})
+    const data = await Product.find()
 
-    res.json(products)
+    res.json(data)
   })
 )
 
@@ -24,7 +25,7 @@ router.get(
     const product = await Product.findById(req.params.id)
 
     if (product) {
-      res.json(product)
+      res.json({ product })
     } else {
       res.status(404).json({ message: 'Product not found' })
     }
