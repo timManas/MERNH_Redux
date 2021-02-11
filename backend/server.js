@@ -25,6 +25,9 @@ const connectDB = async () => {
   }
 }
 
+// Setup Routes BEFORE WE SEND RESPONSE .... OMGGGGGG
+app.use('/api/products', productRoutes)
+
 // Connect Backend to MongoDB
 connectDB()
 
@@ -46,9 +49,6 @@ if (process.env.NODE_ENV === 'production') {
     res.send('API is running ....')
   })
 }
-
-// Setup Routes
-app.use('/api/products', productRoutes)
 
 // Set up backend to listen to PORT 5000
 const PORT = process.env.PORT || 5000

@@ -30,7 +30,7 @@ const HomeScreen = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       const { data } = await axios.get('/api/products') // typeof is Object
-      console.log(JSON.stringify(data, null, 4))
+      // console.log(JSON.stringify(data, null, 4))
       const { products, page, pages } = data
       setProducts(products)
     }
