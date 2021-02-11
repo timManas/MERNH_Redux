@@ -20,14 +20,19 @@ const HomeScreen = () => {
   //     },
   //   ]
 
+  // NOTE FOR TOMORROW TIM
+  // The code below is good since it matches with Chapter 14 .
+  // However, the fetching of products from the DB is not good.
+  // Since that backend Routing is different ...but the FE is the same ...
+
   // Make Dynamic Fetching Calls
   const [products, setProducts] = useState([])
-
   useEffect(() => {
     const fetchProducts = async () => {
       const { data } = await axios.get('/api/products') // typeof is Object
       console.log(JSON.stringify(data, null, 4))
-      setProducts(data)
+      const { products, page, pages } = data
+      setProducts(products)
     }
 
     fetchProducts()

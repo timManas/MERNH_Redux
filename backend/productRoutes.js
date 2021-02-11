@@ -10,9 +10,9 @@ const router = express.Router()
 router.get(
   '/',
   asyncHandler(async (req, res) => {
-    const data = await Product.find()
+    const products = await Product.find()
 
-    res.json(data)
+    res.json({ products })
   })
 )
 
