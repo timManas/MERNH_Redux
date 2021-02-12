@@ -6,7 +6,7 @@ import axios from 'axios'
 import { listProducts } from '../actions/productActions'
 
 const HomeScreen = () => {
-  //   // Make Axios Call to fetch Product
+  //  Solution 0 -  Fetch products from a list hardcoded
   //   const products = [
   //     {
   //       name: 'Airpods Wireless Bluetooth Headphones',
@@ -23,16 +23,16 @@ const HomeScreen = () => {
   //   ]
 
   // Solution 1 - Fetch Products using Async call
-  const [products, setProducts] = useState([])
-  useEffect(() => {
-    const fetchProducts = async () => {
-      const { data } = await axios.get('/api/products') // typeof is Object
-      console.log('products ----- ' + JSON.stringify(data, null, 4))
-      setProducts(data)
-    }
+  // const [products, setProducts] = useState([])
+  // useEffect(() => {
+  //   const fetchProducts = async () => {
+  //     const { data } = await axios.get('/api/products') // typeof is Object
+  //     console.log('products ----- ' + JSON.stringify(data, null, 4))
+  //     setProducts(data)
+  //   }
 
-    fetchProducts()
-  }, [])
+  //   fetchProducts()
+  // }, [])
 
   // Solution 2 - Fetch Products using Redux
   const dispatch = useDispatch()
