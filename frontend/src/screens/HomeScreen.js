@@ -27,7 +27,7 @@ const HomeScreen = () => {
   // useEffect(() => {
   //   const fetchProducts = async () => {
   //     const { data } = await axios.get('/api/products') // typeof is Object
-  //     console.log('products ----- ' + JSON.stringify(data, null, 4))
+  //     console.log(JSON.stringify(data, null, 4))
   //     setProducts(data)
   //   }
 
