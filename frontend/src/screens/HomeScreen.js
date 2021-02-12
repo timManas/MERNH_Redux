@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Row, Col } from 'react-bootstrap'
 import Product from '../components/Product'
 import axios from 'axios'
+import { listProducts } from '../actions/productActions'
 
 const HomeScreen = () => {
   //   // Make Axios Call to fetch Product
@@ -20,23 +22,28 @@ const HomeScreen = () => {
   //     },
   //   ]
 
-  // NOTE FOR TOMORROW TIM
-  // The code below is good since it matches with Chapter 14 .
-  // However, the fetching of products from the DB is not good.
-  // Since that backend Routing is different ...but the FE is the same ...
-
-  // Make Dynamic Fetching Calls
+  // Solution 1 - Fetch Products using Async call
   const [products, setProducts] = useState([])
   useEffect(() => {
     const fetchProducts = async () => {
       const { data } = await axios.get('/api/products') // typeof is Object
-      // console.log(JSON.stringify(data, null, 4))
-      const { products, page, pages } = data
-      setProducts(products)
+      console.log('products ----- ' + JSON.stringify(data, null, 4))
+      setProducts(data)
     }
 
     fetchProducts()
   }, [])
+
+  // Solution 2 - Fetch Products using Redux
+  const dispatch = useDispatch()
+
+  const productList = useSelector((state) => state.productList)
+  const { products } = productList
+  console.log(JSON.stringify(products, null, 4))
+
+  useEffect(() => {
+    dispatch(listProducts())
+  }, [dispatch])
 
   return (
     <>
