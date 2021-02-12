@@ -1,11 +1,20 @@
 # MERNH_Redux
 
+
+# Implementation
+- We have implemenetd 3 ways of fetching products from the backend
+1. HardCoded List
+2. Using async and axios in FE
+3. Using Redux
+
+
 **What you will need ?**
 Install the following in frontend folder:
 - redux
 - react-redux
 - redux-thunk 
 - redux-devtools-extension
+
 
 **Steps**
 1. Create store.js
@@ -29,8 +38,3 @@ Install the following in frontend folder:
 - In Components we fire off the  Actions > Reducers > Store ....
 - Remember , Reducer takes in Action & State
 
-Implementation
-- We have implemenetd 3 ways of fetching products from the backend
-1. HardCoded List
-2. Using async and axios in FE
-3. Using Redux
