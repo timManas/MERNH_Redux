@@ -22,8 +22,8 @@ const HomeScreen = () => {
   //     },
   //   ]
 
-  // Solution 1 - Fetch Products using Async call
-  // Where is data coming from ? I think that might be due axios.get() response .... hence we need { data }
+  // // Solution 1 - Fetch Products using Async call
+  // // Where is data coming from ? I think that might be due axios.get() response .... hence we need { data }
   // const [products, setProducts] = useState([])
   // useEffect(() => {
   //   const fetchProducts = async () => {
@@ -31,7 +31,7 @@ const HomeScreen = () => {
   //     console.log(JSON.stringify(data, null, 4))
   //     setProducts(data)
   //   }
-
+  // 
   //   fetchProducts()
   // }, [])
 
